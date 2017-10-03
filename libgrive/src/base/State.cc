@@ -77,8 +77,9 @@ State::~State()
 /// of local directory.
 void State::FromLocal( const fs::path& p )
 {
-	m_res.Root()->FromLocal( m_st ) ;
-	FromLocal( p, m_res.Root(), m_st.Item( "tree" ) ) ;
+	//m_res.Root()->FromLocal( m_st ) ;
+	//FromLocal( p, m_res.Root(), m_st.Item( "tree" ) ) ;
+	Log( "NO FROM LOCAL UPDATE", log::verbose ) ;
 }
 
 bool State::IsIgnore( const std::string& filename )
@@ -88,6 +89,9 @@ bool State::IsIgnore( const std::string& filename )
 
 void State::FromLocal( const fs::path& p, Resource* folder, Val& tree )
 {
+	Log( "NO FROM LOCAL UPDATE", log::verbose ) ;
+	return;
+	
 	assert( folder != 0 ) ;
 	assert( folder->IsFolder() ) ;
 
